@@ -12,6 +12,7 @@ Funcionalidades da aplicação:
 - [React](https://pt-br.reactjs.org)
 - [React Hooks](https://pt-br.reactjs.org/docs/hooks-intro.html)
 - [Context API](https://pt-br.reactjs.org/docs/context.html#api)
+- [NextJS](https://nextjs.org/)
 - [Typescript](https://www.typescriptlang.org)
 - CSS module
 - [axios](https://github.com/axios/axios)
