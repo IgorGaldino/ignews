@@ -7,7 +7,7 @@ const posts = [
     slug: "my-new-post",
     title: "My new Post",
     excerpt: "Post excerpt",
-    updateAt: "10 de Abril",
+    updatedAt: "10 de Abril",
   },
 ];
 
