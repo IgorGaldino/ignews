@@ -21,6 +21,7 @@ Funcionalidades da aplicação:
 - [Prismic](https://prismic.io/docs)
 - [Stripe](https://stripe.com/docs)
 - [Stripe webhooks](https://stripe.com/docs/webhooks)
+- [Jest](https://jestjs.io)
 
 ### Executando aplicação
 
@@ -32,6 +33,11 @@ Funcionalidades da aplicação:
 ##### Start aplicação
 ```bash
   yarn dev
+```
+
+##### Rodar testes
+```bash
+  yarn test
 ```
 
 #### Início
