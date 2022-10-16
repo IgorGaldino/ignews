@@ -8,6 +8,7 @@ import Link from "next/link";
 import { getPrismicClient } from "../../services/prismic";
 
 import styles from "./styles.module.scss";
+import { useSession } from "next-auth/react";
 
 type Post = {
   slug: string;
@@ -21,6 +22,15 @@ interface PostsProps {
 }
 
 export default function Posts({ posts }: PostsProps) {
+  const { data: session } = useSession();
+
+  const getUrlPost = (slug) => {
+    console.log("SESSION", session);
+    if (session?.activeSubscription) {
+      return `/posts/${slug}`;
+    }
+    return `/posts/preview/${slug}`;
+  }
   return (
     <>
       <Head>
@@ -31,7 +41,7 @@ export default function Posts({ posts }: PostsProps) {
         <div className={styles.posts}>
 
           {posts.map(post => (
-            <Link key={post.slug} href={`/posts/${post.slug}`}>
+            <Link key={post.slug} href={getUrlPost(post.slug)}>
               <a>
                 <time>{post.updatedAt}</time>
                 <strong>{post.title}</strong>
@@ -54,7 +64,8 @@ export const getStaticProps: GetStaticProps = async () => {
       pageSize: 100,
     }
   );
-  const posts = response.results.map((post) => ({
+  const posts = response.results.map((post) => {
+    return ({
     slug: post.uid,
     title: RichText.asText(post.data.title),
     excerpt:
@@ -68,7 +79,7 @@ export const getStaticProps: GetStaticProps = async () => {
         year: "numeric",
       }
     ),
-  }));
+  })});
   // console.log(JSON.stringify(response, null, 2));
 
   return {

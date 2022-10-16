@@ -11,7 +11,7 @@
     "coverage": "jest --coverage"
   },
   "dependencies": {
-    "@prismicio/client": "5.1.1",
+    "@prismicio/client": "^4",
     "@stripe/stripe-js": "^1.24.0",
     "@types/prismic-dom": "^2.1.1",
     "axios": "^0.26.0",
