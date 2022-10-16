@@ -25,7 +25,6 @@ export default function Posts({ posts }: PostsProps) {
   const { data: session } = useSession();
 
   const getUrlPost = (slug) => {
-    console.log("SESSION", session);
     if (session?.activeSubscription) {
       return `/posts/${slug}`;
     }

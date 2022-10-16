@@ -13,8 +13,20 @@ const posts = [
 
 jest.mock("../../services/prismic");
 
+jest.mock("next-auth/react", () => {
+  return {
+    useSession() {
+      return {
+        data: null,
+        status: "unauthenticated",
+      };
+    },
+  };
+});
+
 describe("Posts page", () => {
   it("renders correctly", () => {
+
     render(<Posts posts={posts} />);
 
     expect(screen.getByText("My new Post")).toBeInTheDocument();
