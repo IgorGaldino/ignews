@@ -1,6 +1,8 @@
 # Ig.News
 Aplicação desenvolvida no ignite através da rocketseat. É um sistemas de posts que o usuário consegue se assinar e consumir o conteúdo. **PS.** O conteúdo dos posts foram utilizados apenas para exemplo. Fonte do conteúdo: https://blog.rocketseat.com.br.
 
+Link da aplicação: https://ignews-igorgaldino.vercel.app
+
 Funcionalidades da aplicação:
 - Autenticação através do github;
 - Assinatura de conteúdos de posts;
